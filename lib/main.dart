@@ -1,3 +1,4 @@
+import 'package:budget_buddy/views/theme/styles_palette.dart';
 import 'package:flutter/material.dart';
 
 void main() {
