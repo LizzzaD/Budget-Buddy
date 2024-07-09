@@ -8,10 +8,10 @@ class DonutChart extends StatefulWidget {
   const DonutChart({super.key});
 
   @override
-  State<StatefulWidget> createState() => PieChart2State();
+  State<StatefulWidget> createState() => DonutChartState();
 }
 
-class PieChart2State extends State {
+class DonutChartState extends State {
   late final List<PieChartSectionData> _pieChartSectionData = _generateData();
 
   @override
@@ -53,6 +53,7 @@ class PieChart2State extends State {
             ),
           ),
           Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Text(
                 'Расходы',

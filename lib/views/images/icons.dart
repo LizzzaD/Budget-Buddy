@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-enum SvgIcons {
+enum SVGIcon {
   bus,
   calculator,
   fork_knife,
@@ -15,10 +15,15 @@ enum SvgIcons {
 
   static const _rootPath = 'assets/icons';
 
-  Widget build({Color? color}) {
+  Widget build({Color? color, double? size}) {
     return SvgPicture.asset(
-      '$_rootPath/$name',
-        colorFilter: ColorFilter.mode(color?? Colors.white, BlendMode.srcIn)
+      '$_rootPath/$name.svg',
+      width: size,
+      height: size,
+      colorFilter: ColorFilter.mode(
+        color ?? Colors.white,
+        BlendMode.srcIn,
+      ),
     );
   }
 }
