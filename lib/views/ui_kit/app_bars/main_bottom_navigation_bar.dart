@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:budget_buddy/views/extension/build_context_extension.dart';
 import 'package:flutter/material.dart';
 
@@ -10,15 +12,14 @@ class MainBottomNavigationBar extends StatelessWidget {
     super.key,
   });
 
-  final currentIndex;
-  final onTap;
+  final int currentIndex;
+  final FutureOr<void> Function(int index) onTap;
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: const BorderRadius.only(
-        topRight: Radius.circular(16),
-        topLeft: Radius.circular(16),
+      borderRadius: const BorderRadius.vertical(
+        top: Radius.circular(16),
       ),
       child: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
