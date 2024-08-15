@@ -1,4 +1,5 @@
 import 'package:budget_buddy/views/extension/build_context_extension.dart';
+import 'package:budget_buddy/views/ui_kit/widgets/transaction_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../../features/domain/models/category/category.dart';
@@ -29,8 +30,20 @@ class CategoryWidget extends StatelessWidget {
             shape: BoxShape.circle,
             color: category.color,
           ),
-          padding: const EdgeInsets.all(16),
-          child: category.icon,
+          child: IconButton(
+            icon: category.icon,
+            onPressed: () {
+              showModalBottomSheet(
+                context: context,
+                  isScrollControlled: true,
+                useSafeArea: true,
+                builder: (BuildContext context) {
+                  return const TransactionWidget();
+                });
+            },
+            splashRadius: 30,
+            splashColor: Colors.white.withOpacity(0.7),
+          ),
         ),
         const SizedBox(
           height: 4,

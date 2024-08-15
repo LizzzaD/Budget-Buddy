@@ -11,9 +11,14 @@ class DateWidget extends StatelessWidget {
       children: [
         IconButton(
           onPressed: () {},
-          icon: Icon(Icons.arrow_back_ios_rounded, color: context.colors.white,),
+          icon: Icon(
+            Icons.arrow_back_ios_rounded,
+            color: context.colors.white,
+          ),
         ),
-        const SizedBox(width: 28,),
+        const SizedBox(
+          width: 28,
+        ),
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
@@ -42,10 +47,15 @@ class DateWidget extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(width: 28,),
+        const SizedBox(
+          width: 28,
+        ),
         IconButton(
           onPressed: () {},
-          icon: Icon(Icons.arrow_forward_ios_rounded, color: context.colors.white,),
+          icon: Icon(
+            Icons.arrow_forward_ios_rounded,
+            color: context.colors.white,
+          ),
         ),
       ],
     );

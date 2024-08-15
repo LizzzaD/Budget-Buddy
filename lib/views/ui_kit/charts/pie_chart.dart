@@ -18,13 +18,13 @@ class DonutChartState extends State {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       bool isChartEmpty = false;
-      Timer.periodic(const Duration(seconds: 2), (_) {
-        isChartEmpty = !isChartEmpty;
-
-        if (isChartEmpty) {}
-
-        setState(() {});
-      });
+      // Timer.periodic(const Duration(seconds: 2), (_) {
+      //   isChartEmpty = !isChartEmpty;
+      //
+      //   if (isChartEmpty) {}
+      //
+      //   setState(() {});
+      // });
     });
 
     super.initState();
@@ -37,18 +37,16 @@ class DonutChartState extends State {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Expanded(
-            child: AspectRatio(
-              aspectRatio: 1,
-              child: PieChart(
-                PieChartData(
-                  startDegreeOffset: -90,
-                  borderData: FlBorderData(
-                    show: false,
-                  ),
-                  sectionsSpace: 0,
-                  sections: _pieChartSectionData,
+          AspectRatio(
+            aspectRatio: 1,
+            child: PieChart(
+              PieChartData(
+                startDegreeOffset: -90,
+                borderData: FlBorderData(
+                  show: false,
                 ),
+                sectionsSpace: 0,
+                sections: _pieChartSectionData,
               ),
             ),
           ),

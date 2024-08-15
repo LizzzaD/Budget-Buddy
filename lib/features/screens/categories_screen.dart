@@ -20,19 +20,15 @@ class CategoriesScreen extends StatelessWidget {
         planned: Decimal.parse("30000"),
         color: context.colors.blue,
         icon: SVGIcon.grocery.build());
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const DonutChart(),
-            const SizedBox(
-              height: 36,
-            ),
-            CategoryWidget(category: category,),
-          ],
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const DonutChart(),
+        const SizedBox(
+          height: 36,
         ),
-      ),
+        CategoryWidget(category: category,),
+      ],
     );
   }
 }

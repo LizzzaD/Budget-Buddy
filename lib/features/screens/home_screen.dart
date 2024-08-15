@@ -33,9 +33,9 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+    _selectedIndex = index;
+
+    setState(() {});
   }
 
   @override
@@ -71,7 +71,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-
                 const DateWidget(),
               ],
             ),
