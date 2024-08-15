@@ -3,6 +3,7 @@ import 'package:budget_buddy/views/extension/build_context_extension.dart';
 import 'package:budget_buddy/views/images/icons.dart';
 import 'package:budget_buddy/views/ui_kit/app_bars/main_bottom_navigation_bar.dart';
 import 'package:budget_buddy/views/ui_kit/widgets/date_widget.dart';
+import 'package:budget_buddy/views/ui_kit/widgets/transaction_list_tile_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -26,9 +27,14 @@ class _HomeScreenState extends State<HomeScreen> {
       style: optionStyle,
     ),
     CategoriesScreen(),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
+    Column(
+      children: [
+        SizedBox(
+          height: 50,
+        ),
+        TransactionListTileWidget(),
+        TransactionListTileWidget(),
+      ],
     ),
   ];
 
