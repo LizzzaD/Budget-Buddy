@@ -34,12 +34,12 @@ class CategoryWidget extends StatelessWidget {
             icon: category.icon,
             onPressed: () {
               showModalBottomSheet(
-                context: context,
+                  context: context,
                   isScrollControlled: true,
-                useSafeArea: true,
-                builder: (BuildContext context) {
-                  return const TransactionWidget();
-                });
+                  useSafeArea: true,
+                  builder: (BuildContext context) {
+                    return const TransactionWidget();
+                  });
             },
             splashRadius: 30,
             splashColor: Colors.white.withOpacity(0.7),

@@ -2,6 +2,7 @@ import 'package:budget_buddy/features/screens/categories_screen.dart';
 import 'package:budget_buddy/views/extension/build_context_extension.dart';
 import 'package:budget_buddy/views/images/icons.dart';
 import 'package:budget_buddy/views/ui_kit/app_bars/main_bottom_navigation_bar.dart';
+import 'package:budget_buddy/views/ui_kit/widgets/balance_card_widget.dart';
 import 'package:budget_buddy/views/ui_kit/widgets/date_widget.dart';
 import 'package:budget_buddy/views/ui_kit/widgets/transaction_list_tile_widget.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,20 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         SizedBox(
           height: 50,
+        ),
+        Row(
+          children: [
+            Expanded(
+              child: BalanceCardWidget(isInitial: true,),
+            ),
+            SizedBox(width: 8),
+            Expanded(
+              child: BalanceCardWidget(isInitial: false,),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 40,
         ),
         TransactionListTileWidget(),
         TransactionListTileWidget(),
