@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import '../../views/ui_kit/widgets/category_widget.dart';
 import '../domain/models/category/category.dart';
 
-class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key});
+class CategoriesPage extends StatelessWidget {
+  const CategoriesPage({super.key});
 
 
   @override
