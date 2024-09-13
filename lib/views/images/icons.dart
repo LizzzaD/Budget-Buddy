@@ -4,9 +4,13 @@ import 'package:flutter_svg/svg.dart';
 enum SVGIcon {
   bus,
   calculator,
+  calendar,
+  ellipsis,
+  filled_ellipsis,
   fork_knife,
   grocery,
   hand_heart,
+  infinity,
   pie_chart,
   puzzle,
   receipt,
@@ -20,10 +24,12 @@ enum SVGIcon {
       '$_rootPath/$name.svg',
       width: size,
       height: size,
-      colorFilter: ColorFilter.mode(
-        color ?? Colors.white,
-        BlendMode.srcIn,
-      ),
+      colorFilter: color != null
+          ? ColorFilter.mode(
+              color,
+              BlendMode.srcIn,
+            )
+          : null,
     );
   }
 }

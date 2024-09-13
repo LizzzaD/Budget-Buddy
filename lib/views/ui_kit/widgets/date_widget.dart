@@ -2,7 +2,9 @@ import 'package:budget_buddy/views/extension/build_context_extension.dart';
 import 'package:flutter/material.dart';
 
 class DateWidget extends StatelessWidget {
-  const DateWidget({super.key});
+  const DateWidget({required this.onPressed, super.key});
+
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class DateWidget extends StatelessWidget {
           width: 28,
         ),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 16),
             backgroundColor: context.colors.backgroundColor.withOpacity(0.4),
