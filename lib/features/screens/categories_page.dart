@@ -13,21 +13,67 @@ class CategoriesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Category category = Category(
-        id: 1,
-        title: 'Продукты',
-        filled: Decimal.parse("1500"),
-        planned: Decimal.parse("30000"),
-        color: context.colors.blue,
-        icon: SVGIcon.grocery.build());
+
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+
       children: [
-        const DonutChart(),
+        const SizedBox(height: 60,),
+        const Center(child: DonutChart()),
         const SizedBox(
           height: 36,
         ),
-        CategoryWidget(category: category,),
+        Wrap(
+          alignment: WrapAlignment.spaceBetween,
+          spacing: 40,
+          runSpacing: 24,
+          children: [
+            CategoryWidget(
+              category: Category(
+                  id: 1,
+                  title: 'Продукты',
+                  filled: Decimal.parse('300'),
+                  planned: Decimal.parse('5000'),
+                  color: context.colors.blue,
+                  icon: SVGIcon.grocery.build()),
+            ),
+            CategoryWidget(
+              category: Category(
+                  id: 1,
+                  title: 'Кафе',
+                  filled: Decimal.parse('300'),
+                  planned: Decimal.parse('5000'),
+                  color: context.colors.pink,
+                  icon: SVGIcon.grocery.build()),
+            ),
+            CategoryWidget(
+              category: Category(
+                  id: 1,
+                  title: 'Досуг',
+                  filled: Decimal.parse('300'),
+                  planned: Decimal.parse('5000'),
+                  color: context.colors.orange,
+                  icon: SVGIcon.grocery.build()),
+            ),
+            CategoryWidget(
+              category: Category(
+                  id: 1,
+                  title: 'Транспорт',
+                  filled: Decimal.parse('300'),
+                  planned: Decimal.parse('5000'),
+                  color: context.colors.red,
+                  icon: SVGIcon.grocery.build()),
+            ),
+            CategoryWidget(
+              category: Category(
+                  id: 1,
+                  title: 'Здоровье',
+                  filled: Decimal.parse('300'),
+                  planned: Decimal.parse('5000'),
+                  color: context.colors.lightBlue,
+                  icon: SVGIcon.grocery.build()),
+            ),
+          ],
+        ),
       ],
     );
   }

@@ -1,3 +1,4 @@
+import 'package:budget_buddy/features/screens/budget_planning_page.dart';
 import 'package:budget_buddy/features/screens/categories_page.dart';
 import 'package:budget_buddy/features/screens/transactions_page.dart';
 import 'package:budget_buddy/views/extension/build_context_extension.dart';
@@ -17,16 +18,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 1;
 
-  static const TextStyle optionStyle = TextStyle(
-    fontSize: 30,
-    fontWeight: FontWeight.bold,
-  );
-
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
+    BudgetPlanningPage(),
     CategoriesPage(),
     TransactionsPage()
   ];
@@ -70,15 +63,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-                 DateWidget(        onPressed: () {
-                   showModalBottomSheet(
-                       context: context,
-                       isScrollControlled: true,
-                       useSafeArea: true,
-                       builder: (BuildContext context) {
-                         return const TimePeriodSelectionWidget();
-                       });
-                 },),
+                DateWidget(
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        isScrollControlled: true,
+                        useSafeArea: true,
+                        builder: (BuildContext context) {
+                          return const TimePeriodSelectionWidget();
+                        });
+                  },
+                ),
               ],
             ),
           ),
